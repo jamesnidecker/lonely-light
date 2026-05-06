@@ -15,6 +15,21 @@
 html, body {
   overflow-y: scroll;
 }
+nav {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  background: rgba(10,10,10,0.8) !important;
+  border-bottom: 1px solid rgba(201,168,76,0.2) !important;
+}
+.text-gradient-gold {
+  background: linear-gradient(135deg, #c9a84c 0%, #e2c97e 50%, #c9a84c 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 2px; }
 
 html body h1, 
 html body h2, 

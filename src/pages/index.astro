@@ -1,11 +1,248 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="James Nidecker — Geometric, Mandala & Blackout tattoo artist based in Amsterdam. 13+ years experience. Book your custom piece." />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <title>James Nidecker · Tattoo Artist Amsterdam</title>
+    <style>
+      * { font-family: 'Space Grotesk', sans-serif; box-sizing: border-box; }
+      h1, h2, h3 { font-family: 'Archivo', sans-serif; }
+      .gold { color: #C9A84C; }
+      .gold-bg { background-color: #C9A84C; }
+      .gold-border { border-color: #C9A84C; }
+      .gold-text { color: #C9A84C; }
+      html { scroll-behavior: smooth; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body style="background:#000; color:#fff; margin:0; padding:0; font-family:'Space Grotesk',sans-serif;">
 
-<Layout>
-	<Welcome />
-</Layout>
+    <!-- NAV -->
+    <nav style="position:fixed; top:0; width:100%; background:#000; border-bottom:1px solid #111; z-index:50; padding:20px 40px; display:flex; align-items:center; justify-content:space-between;">
+      <span style="font-weight:700; letter-spacing:0.2em; text-transform:uppercase; font-size:14px;">James Nidecker</span>
+      <div style="display:flex; gap:32px; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#666;">
+        <a href="#work" style="color:#666; text-decoration:none;">Work</a>
+        <a href="#about" style="color:#666; text-decoration:none;">About</a>
+        <a href="#services" style="color:#666; text-decoration:none;">Services</a>
+        <a href="#process" style="color:#666; text-decoration:none;">Process</a>
+        <a href="#contact" style="color:#666; text-decoration:none;">Contact</a>
+      </div>
+      <a href="#contact" style="border:1px solid #C9A84C; color:#C9A84C; font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:12px 24px; text-decoration:none;">Book Now</a>
+    </nav>
+
+    <!-- HERO -->
+    <section style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding-top:80px;">
+      <p style="color:#C9A84C; letter-spacing:0.2em; font-size:12px; text-transform:uppercase; margin-bottom:32px;">Geometric · Mandala · Blackout</p>
+      <h1 style="font-weight:900; text-transform:uppercase; line-height:0.9; margin:0; font-size:clamp(4rem, 12vw, 11rem);">
+        <span style="color:#fff; display:block;">JAMES</span>
+        <span style="color:#C9A84C; display:block;">NIDECKER</span>
+      </h1>
+      <p style="margin-top:24px; color:#555; letter-spacing:0.2em; text-transform:uppercase; font-size:12px;">— Tattoo Artist —</p>
+      <p style="margin-top:24px; color:#888; max-width:500px; line-height:1.8; font-size:15px;">
+        Where mathematics meets skin. Every geometric tattoo is a unique composition, designed with precision, executed with patience.
+      </p>
+      <div style="margin-top:48px; display:flex; gap:16px;">
+        <a href="#contact" style="background:#C9A84C; color:#000; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Book Your Session</a>
+        <a href="#work" style="border:1px solid #C9A84C; color:#C9A84C; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">View Work</a>
+      </div>
+    </section>
+
+    <!-- INNER SYMMETRY -->
+    <section style="padding:120px 40px; display:flex; flex-direction:column; align-items:center; background:#000;">
+      <div style="width:300px; height:300px; border-radius:50%; border:1px solid #C9A84C; display:flex; align-items:center; justify-content:center; margin-bottom:60px;">
+        <span style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase;">Your Mandala Here</span>
+      </div>
+      <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:24px;">Inner Symmetry</p>
+      <p style="color:#888; text-align:center; max-width:700px; line-height:1.8; font-size:17px;">
+        In a perfect mandala, every element has a mathematical mirror. Remove one petal and the entire composition loses equilibrium. This is why geometric tattoos demand absolute precision, or they fail completely.
+      </p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="padding:80px 40px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:stretch; max-width:1400px; margin:0 auto;">
+      <img src="/images/artist-photo.jpg" alt="James Nidecker tattoo artist Amsterdam" style="width:100%; height:100%; object-fit:cover; object-position:center top; min-height:600px;" />
+      <div>
+        <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:24px;">About The Artist</p>
+        <h2 style="font-weight:900; text-transform:uppercase; line-height:0.9; font-size:clamp(2.5rem, 5vw, 4rem); margin:0 0 32px 0;">
+          <span style="color:#fff; display:block;">GEOMETRY IS</span>
+          <span style="color:#C9A84C; display:block;">MY LANGUAGE</span>
+        </h2>
+        <p style="color:#888; line-height:1.8; margin-bottom:20px;">James Nidecker has spent over 13 years transforming skin into sacred geometry. Starting out in Bangkok, learning his craft in Brooklyn, and completing his apprenticeship at Red Rose Tattoo in Schiedam.</p>
+        <p style="color:#888; line-height:1.8; margin-bottom:20px;">What began with traditional designs evolved into a deep obsession with geometric precision — inspired by artists like Dr Woo, refined through Illustrator, and perfected through thousands of hours of practice.</p>
+        <p style="color:#888; line-height:1.8;">Now based at Ink District Amsterdam in the city centre, James works with clients from around the world who seek tattoos that transcend trend.</p>
+      </div>
+    </section>
+
+    <!-- THREE DISCIPLINES -->
+    <section id="services" style="padding:120px 40px; background:#0a0a0a;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; margin-bottom:16px;">Specialties</p>
+        <h2 style="font-weight:900; text-transform:uppercase; line-height:0.9; text-align:center; font-size:clamp(2rem, 5vw, 3.5rem); letter-spacing:-0.02em; margin:0 0 80px 0;">
+          <span style="color:#fff; display:block;">THE THREE</span>
+          <span style="color:#C9A84C; display:block;">DISCIPLINES</span>
+        </h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
+          <div style="border:1px solid #222; padding:40px; background:#111;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px;">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="26,4 50,46 2,46" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <circle cx="26" cy="32" r="6" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <circle cx="26" cy="32" r="2" fill="#C9A84C"/>
+              </svg>
+              <p style="font-size:48px; font-weight:900; color:#1a1a1a; margin:0;">01</p>
+            </div>
+            <h3 style="font-weight:900; text-transform:uppercase; font-size:18px; margin:0 0 8px 0;">Geometric Tattoo</h3>
+            <p style="color:#C9A84C; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; margin:0 0 16px 0;">Pure Form. Perfect Angles.</p>
+            <p style="color:#666; font-size:14px; line-height:1.8;">Triangles, hexagons, sacred geometry shapes — each piece is a mathematical composition designed from scratch. No templates, no repetition.</p>
+          </div>
+          <div style="border:1px solid #222; padding:40px; background:#111;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px;">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="26" cy="26" r="23" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <circle cx="26" cy="26" r="16" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <circle cx="26" cy="26" r="9" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <circle cx="26" cy="26" r="2.5" fill="#C9A84C"/>
+              </svg>
+              <p style="font-size:48px; font-weight:900; color:#1a1a1a; margin:0;">02</p>
+            </div>
+            <h3 style="font-weight:900; text-transform:uppercase; font-size:18px; margin:0 0 8px 0;">Mandala Tattoo</h3>
+            <p style="color:#C9A84C; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; margin:0 0 16px 0;">Infinite Detail. Sacred Meaning.</p>
+            <p style="color:#666; font-size:14px; line-height:1.8;">Intricate mandala designs with perfect radial symmetry. Each petal, each ring, each tiny element placed with mathematical precision.</p>
+          </div>
+          <div style="border:1px solid #222; padding:40px; background:#111;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px;">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="44" height="44" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <rect x="14" y="14" width="24" height="24" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <rect x="22" y="22" width="8" height="8" fill="#C9A84C"/>
+              </svg>
+              <p style="font-size:48px; font-weight:900; color:#1a1a1a; margin:0;">03</p>
+            </div>
+            <h3 style="font-weight:900; text-transform:uppercase; font-size:18px; margin:0 0 8px 0;">Blackout</h3>
+            <p style="color:#C9A84C; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; margin:0 0 16px 0;">Bold. Enduring. Definitive.</p>
+            <p style="color:#666; font-size:14px; line-height:1.8;">Solid black geometric patterns with high visual impact. Blackout tattoos age beautifully and make a statement that will last a lifetime.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PORTFOLIO -->
+    <section id="work" style="padding:120px 40px;">
+      <div style="max-width:1400px; margin:0 auto;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px;">
+          <h2 style="font-weight:900; text-transform:uppercase; line-height:0.9; font-size:clamp(3rem, 7vw, 7rem); margin:0;">
+            <span style="color:#fff;">THE </span>
+            <span style="color:#C9A84C;">PORTFOLIO</span>
+          </h2>
+          <p style="color:#555; font-size:14px; text-align:right;">Every piece designed from scratch.<br/>No flash, no repeats.</p>
+        </div>
+        <div style="display:flex; gap:8px; margin-bottom:40px; flex-wrap:wrap;">
+          <button onclick="filterImages('all')" id="btn-all" style="background:#C9A84C; color:#000; border:1px solid #C9A84C; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">All</button>
+          <button onclick="filterImages('geometric')" id="btn-geometric" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Geometric</button>
+          <button onclick="filterImages('mandala')" id="btn-mandala" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Mandala</button>
+          <button onclick="filterImages('blackout')" id="btn-blackout" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Blackout</button>
+          <button onclick="filterImages('ornamental')" id="btn-ornamental" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Ornamental</button>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); grid-template-rows:auto; gap:4px;">
+          <img data-category="geometric" src="/images/geometric-tattoo-1.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; grid-column:span 1; grid-row:span 2;" />
+          <img data-category="geometric" src="/images/geometric-tattoo-2.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
+          <img data-category="mandala" src="/images/mandala-tattoo-1.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
+          <img data-category="geometric" src="/images/geometric-tattoo-3.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
+          <img data-category="mandala" src="/images/mandala-tattoo-2.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
+          <img data-category="mandala" src="/images/mandala-tattoo-3.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; grid-column:span 1; grid-row:span 2;" />
+          <img data-category="mandala" src="/images/mandala-tattoo-4.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
+          <img data-category="mandala" src="/images/mandala-tattoo-5.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
+          <img data-category="ornamental" src="/images/ornamental-tattoo-1.jpg" alt="Ornamental tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+    function filterImages(category) {
+      const images = document.querySelectorAll('[data-category]');
+      const buttons = document.querySelectorAll('[id^="btn-"]');
+      buttons.forEach(btn => {
+        btn.style.background = 'transparent';
+        btn.style.color = '#fff';
+        btn.style.borderColor = '#333';
+      });
+      const activeBtn = document.getElementById('btn-' + category);
+      if (activeBtn) {
+        activeBtn.style.background = '#C9A84C';
+        activeBtn.style.color = '#000';
+        activeBtn.style.borderColor = '#C9A84C';
+      }
+      images.forEach(img => {
+        if (category === 'all' || img.dataset.category === category) {
+          img.style.display = 'block';
+        } else {
+          img.style.display = 'none';
+        }
+      });
+    }
+    </script>
+    <!-- PROCESS -->
+    <section id="process" style="padding:120px 40px; background:#0a0a0a;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; margin-bottom:16px;">How It Works</p>
+        <h2 style="font-weight:900; text-transform:uppercase; line-height:0.9; text-align:center; font-size:clamp(3rem, 7vw, 7rem); margin:0 0 80px 0;">
+          <span style="color:#fff;">THE </span>
+          <span style="color:#C9A84C;">PROCESS</span>
+        </h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px;">
+          <div>
+            <div style="border:1px solid #C9A84C; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18px; color:#C9A84C; margin-bottom:24px;">01</div>
+            <h3 style="font-weight:900; text-transform:uppercase; margin:0 0 12px 0;">Consultation</h3>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:16px;">We discuss your vision, placement, size, and the story you want to tell.</p>
+            <span style="border:1px solid #333; color:#555; font-size:11px; padding:6px 12px; letter-spacing:0.1em; text-transform:uppercase;">30 Min · Free</span>
+          </div>
+          <div>
+            <div style="border:1px solid #C9A84C; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18px; color:#C9A84C; margin-bottom:24px;">02</div>
+            <h3 style="font-weight:900; text-transform:uppercase; margin:0 0 12px 0;">Custom Design</h3>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:16px;">James draws your piece from scratch, mathematically precise, digitally drafted in Illustrator.</p>
+            <span style="border:1px solid #333; color:#555; font-size:11px; padding:6px 12px; letter-spacing:0.1em; text-transform:uppercase;">1–2 Weeks</span>
+          </div>
+          <div>
+            <div style="border:1px solid #C9A84C; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18px; color:#C9A84C; margin-bottom:24px;">03</div>
+            <h3 style="font-weight:900; text-transform:uppercase; margin:0 0 12px 0;">The Session</h3>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:16px;">At Ink District Amsterdam, James executes the design with precision.</p>
+            <span style="border:1px solid #333; color:#555; font-size:11px; padding:6px 12px; letter-spacing:0.1em; text-transform:uppercase;">2–8 Hours</span>
+          </div>
+          <div>
+            <div style="border:1px solid #C9A84C; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18px; color:#C9A84C; margin-bottom:24px;">04</div>
+            <h3 style="font-weight:900; text-transform:uppercase; margin:0 0 12px 0;">Healed Art</h3>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:16px;">With proper aftercare, your piece settles beautifully — crisp lines that last decades.</p>
+            <span style="border:1px solid #333; color:#555; font-size:11px; padding:6px 12px; letter-spacing:0.1em; text-transform:uppercase;">4–6 Weeks Healing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section id="contact" style="padding:120px 40px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:24px;">Get Tattooed</p>
+      <h2 style="font-weight:900; text-transform:uppercase; line-height:0.9; font-size:clamp(3rem, 10vw, 9rem); margin:0 0 40px 0;">
+        <span style="color:#fff; display:block;">READY TO</span>
+        <span style="color:#C9A84C; display:block;">BEGIN?</span>
+      </h2>
+      <p style="color:#888; max-width:500px; line-height:1.8; margin-bottom:48px;">Booking slots are limited. James takes on a select number of custom pieces each month to ensure every client receives his full attention.</p>
+      <div style="display:flex; gap:16px; margin-bottom:32px;">
+        <a href="mailto:james@jamesnidecker.com" style="background:#C9A84C; color:#000; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Book An Appointment</a>
+        <a href="https://instagram.com/jamesnidecker" style="border:1px solid #C9A84C; color:#C9A84C; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Message On Instagram</a>
+      </div>
+      <p style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">Free consultation · 100% custom design · Amsterdam-based</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="border-top:1px solid #111; padding:32px 40px; display:flex; justify-content:space-between; align-items:center;">
+      <span style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">© 2026 James Nidecker</span>
+      <span style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">Ink District Amsterdam</span>
+      <a href="https://instagram.com/jamesnidecker" style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">@jamesnidecker</a>
+    </footer>
+
+  </body>
+</html>
+

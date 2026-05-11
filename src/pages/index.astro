@@ -17,9 +17,140 @@
       .gold-text { color: #C9A84C; }
       html { scroll-behavior: smooth; }
       @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      /* ============================================
+         MOBILE STYLES
+      ============================================ */
+
+      /* NAV — hide links on mobile, keep logo + book now */
+      @media (max-width: 768px) {
+        nav {
+          padding: 16px 20px !important;
+        }
+        .nav-links {
+          display: none !important;
+        }
+        .nav-book {
+          padding: 10px 16px !important;
+          font-size: 11px !important;
+        }
+      }
+
+      /* HERO */
+      @media (max-width: 768px) {
+        .hero-buttons {
+          flex-direction: column !important;
+          width: 100%;
+          padding: 0 20px;
+        }
+        .hero-buttons a {
+          text-align: center;
+          width: 100%;
+        }
+      }
+
+      /* ABOUT — stack to single column */
+      @media (max-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1fr !important;
+          gap: 32px !important;
+          padding: 60px 20px !important;
+        }
+        .about-grid img {
+          min-height: 400px !important;
+          max-height: 500px !important;
+        }
+      }
+
+      /* THREE DISCIPLINES — stack to single column */
+      @media (max-width: 768px) {
+        .disciplines-grid {
+          grid-template-columns: 1fr !important;
+        }
+        .disciplines-section {
+          padding: 60px 20px !important;
+        }
+      }
+
+      /* PORTFOLIO */
+      @media (max-width: 768px) {
+        .portfolio-section {
+          padding: 60px 20px !important;
+        }
+        .portfolio-header {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 8px !important;
+        }
+        #masonry-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+
+      /* PROCESS — stack to 2 columns on mobile */
+      @media (max-width: 768px) {
+        .process-grid {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 32px !important;
+        }
+        .process-section {
+          padding: 60px 20px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .process-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+
+      /* FOLLOW THE JOURNEY */
+      @media (max-width: 768px) {
+        .instagram-section {
+          padding: 60px 20px !important;
+        }
+      }
+
+      /* FAQ */
+      @media (max-width: 768px) {
+        .faq-section {
+          padding: 60px 20px !important;
+        }
+      }
+
+      /* BOOKING CTA */
+      @media (max-width: 768px) {
+        .contact-section {
+          padding: 60px 20px !important;
+        }
+        .contact-buttons {
+          flex-direction: column !important;
+          width: 100%;
+          padding: 0 20px;
+        }
+        .contact-buttons a {
+          text-align: center;
+          width: 100%;
+        }
+      }
+
+      /* FOOTER — stack to single column */
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 40px !important;
+        }
+        footer {
+          padding: 60px 20px 40px 20px !important;
+        }
+        .footer-bottom {
+          flex-direction: column !important;
+          gap: 12px !important;
+          text-align: center !important;
+        }
+      }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
@@ -27,19 +158,21 @@
 
     <!-- NAV -->
     <nav style="position:fixed; top:0; width:100%; background:#000; border-bottom:1px solid #111; z-index:50; padding:20px 40px; display:flex; align-items:center; justify-content:space-between;">
-      <span style="font-weight:700; letter-spacing:0.2em; text-transform:uppercase; font-size:14px;">James Nidecker</span>
-      <div style="display:flex; gap:32px; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#666;">
+      <a href="/" style="font-weight:700; letter-spacing:0.2em; text-transform:uppercase; font-size:14px; color:#fff; text-decoration:none; flex-shrink:0;">James Nidecker</a>
+      <div class="nav-links" style="display:flex; gap:32px; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#666;">
         <a href="#work" style="color:#666; text-decoration:none;">Work</a>
         <a href="#about" style="color:#666; text-decoration:none;">About</a>
         <a href="#services" style="color:#666; text-decoration:none;">Services</a>
         <a href="#process" style="color:#666; text-decoration:none;">Process</a>
+        <a href="#faq" style="color:#666; text-decoration:none;">FAQ</a>
         <a href="#contact" style="color:#666; text-decoration:none;">Contact</a>
+        <a href="https://instagram.com/jamesnidecker" target="_blank" style="color:#666; text-decoration:none;">Instagram</a>
       </div>
-      <a href="#contact" style="border:1px solid #C9A84C; color:#C9A84C; font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:12px 24px; text-decoration:none;">Book Now</a>
+      <a class="nav-book" href="http://book.useblink.app/ink-district/james-nidecker?theme=light" target="_blank" style="border:1px solid #C9A84C; color:#C9A84C; font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:12px 24px; text-decoration:none; flex-shrink:0;">Book Now</a>
     </nav>
 
     <!-- HERO -->
-    <section style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding-top:80px;">
+    <section style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 20px 40px 20px;">
       <p style="color:#C9A84C; letter-spacing:0.2em; font-size:12px; text-transform:uppercase; margin-bottom:32px;">Geometric · Mandala · Blackout</p>
       <h1 style="font-weight:600; text-transform:uppercase; line-height:0.9; margin:0; font-size:clamp(4rem, 12vw, 11rem);">
         <span style="color:#fff; display:block;">JAMES</span>
@@ -47,25 +180,16 @@
       </h1>
       <p style="margin-top:24px; color:#555; letter-spacing:0.2em; text-transform:uppercase; font-size:12px;">— Tattoo Artist —</p>
       <p style="margin-top:24px; color:#888; max-width:500px; line-height:1.8; font-size:15px;">
-        Where mathematics meets skin. Every geometric tattoo is a unique composition, designed with precision, executed with patience.
+        Where mathematics meets art. Every geometric tattoo is a unique composition, designed with precision, executed with patience.
       </p>
-      <div style="margin-top:48px; display:flex; gap:16px;">
-        <a href="#contact" style="background:#C9A84C; color:#000; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Book Your Session</a>
+      <div class="hero-buttons" style="margin-top:48px; display:flex; gap:16px;">
+        <a href="http://book.useblink.app/ink-district/james-nidecker?theme=light" target="_blank" style="background:#C9A84C; color:#000; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Book Your Session</a>
         <a href="#work" style="border:1px solid #C9A84C; color:#C9A84C; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">View Work</a>
       </div>
     </section>
 
-    <!-- INNER SYMMETRY -->
-<section style="padding:80px 40px 120px 40px; display:flex; flex-direction:column; align-items:center; background:#000; overflow:hidden;">
-  <img src="/images/mandala-logo.png" alt="Mandala geometric design" style="width:min(700px, 90vw); height:min(700px, 90vw); object-fit:contain; margin-bottom:80px; animation: spin 25s linear infinite; opacity:0.9;" />
-  <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:24px; text-align:left; align-self:flex-start; padding-left:0;">Inner Symmetry</p>
-  <p style="color:#888; text-align:center; max-width:700px; line-height:1.8; font-size:17px;">
-    In a perfect mandala, every element has a mathematical mirror. Remove one petal and the entire composition loses equilibrium. This is why geometric tattoos demand absolute precision, or they fail completely.
-  </p>
-</section>
-
     <!-- ABOUT -->
-    <section id="about" style="padding:80px 40px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:stretch; max-width:1400px; margin:0 auto;">
+    <section id="about" class="about-grid" style="scroll-margin-top:20px; padding:80px 40px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:stretch; max-width:1400px; margin:0 auto;">
       <img src="/images/artist-photo.jpg" alt="James Nidecker tattoo artist Amsterdam" style="width:100%; height:100%; object-fit:cover; object-position:center top; min-height:600px;" />
       <div>
         <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:24px;">About The Artist</p>
@@ -75,20 +199,25 @@
         </h2>
         <p style="color:#888; line-height:1.8; margin-bottom:20px;">James Nidecker has spent over 13 years transforming skin into sacred geometry. Starting out in Bangkok, learning his craft in Brooklyn, and completing his apprenticeship at Red Rose Tattoo in Schiedam.</p>
         <p style="color:#888; line-height:1.8; margin-bottom:20px;">What began with traditional designs evolved into a deep obsession with geometric precision — inspired by artists like Dr Woo, refined through Illustrator, and perfected through thousands of hours of practice.</p>
-        <p style="color:#888; line-height:1.8;">Now based at Ink District Amsterdam in the city centre, James works with clients from around the world who seek tattoos that transcend trend.</p>
+        <p style="color:#888; line-height:1.8; margin-bottom:32px;">Now based at Ink District Amsterdam in the city centre, James works with clients from around the world who seek tattoos that transcend trend.</p>
+        <blockquote style="border-left:2px solid #C9A84C; padding-left:24px; margin:0;">
+          <p style="color:#888; font-style:italic; line-height:1.8; font-size:16px;">"In a perfect mandala, every element has a mathematical mirror. Remove one petal and the entire composition loses equilibrium."</p>
+        </blockquote>
       </div>
     </section>
 
     <!-- THREE DISCIPLINES -->
-    <section id="services" style="padding:120px 40px; background:#0a0a0a;">
+    <section id="services" class="disciplines-section" style="scroll-margin-top:10px; padding:120px 40px; background:#0a0a0a;">
       <div style="max-width:1100px; margin:0 auto;">
         <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; margin-bottom:16px;">Specialties</p>
-        <h2 style="font-weight:600; text-transform:uppercase; line-height:0.9; text-align:center; font-size:clamp(2rem, 5vw, 3.5rem); letter-spacing:-0.02em; margin:0 0 80px 0;">
+        <h2 style="font-weight:600; text-transform:uppercase; line-height:0.9; text-align:center; font-size:clamp(2rem, 5vw, 3.5rem); letter-spacing:-0.02em; margin:0 0 40px 0;">
           <span style="color:#fff; display:block;">THE THREE</span>
           <span style="color:#C9A84C; display:block;">DISCIPLINES</span>
         </h2>
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
-          <div style="border:1px solid #222; padding:40px; background:#111;">
+        <div class="disciplines-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
+
+          <!-- CARD 1 -->
+          <div class="discipline-card" style="border:1px solid #222; padding:40px; background:#111; transition: border-color 0.3s ease, transform 0.3s ease;">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px;">
               <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="26,4 50,46 2,46" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
@@ -99,9 +228,17 @@
             </div>
             <h3 style="font-weight:600; text-transform:uppercase; font-size:18px; margin:0 0 8px 0;">Geometric Tattoo</h3>
             <p style="color:#C9A84C; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; margin:0 0 16px 0;">Pure Form. Perfect Angles.</p>
-            <p style="color:#666; font-size:14px; line-height:1.8;">Triangles, hexagons, sacred geometry shapes — each piece is a mathematical composition designed from scratch. No templates, no repetition.</p>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:32px;">Triangles, hexagons, sacred geometry shapes — each piece is a mathematical composition designed from scratch. No templates, no repetition.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Sacred Geometry</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Precision Lines</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Custom Design</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Mathematical</span>
+            </div>
           </div>
-          <div style="border:1px solid #222; padding:40px; background:#111;">
+
+          <!-- CARD 2 -->
+          <div class="discipline-card" style="border:1px solid #222; padding:40px; background:#111; transition: border-color 0.3s ease, transform 0.3s ease;">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px;">
               <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="26" cy="26" r="23" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
@@ -113,9 +250,17 @@
             </div>
             <h3 style="font-weight:600; text-transform:uppercase; font-size:18px; margin:0 0 8px 0;">Mandala Tattoo</h3>
             <p style="color:#C9A84C; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; margin:0 0 16px 0;">Infinite Detail. Sacred Meaning.</p>
-            <p style="color:#666; font-size:14px; line-height:1.8;">Intricate mandala designs with perfect radial symmetry. Each petal, each ring, each tiny element placed with mathematical precision.</p>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:32px;">Intricate mandala designs with perfect radial symmetry. Each petal, each ring, each tiny element placed with mathematical precision.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Radial Symmetry</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Fine Detail</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Full-Custom</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Sacred Pattern</span>
+            </div>
           </div>
-          <div style="border:1px solid #222; padding:40px; background:#111;">
+
+          <!-- CARD 3 -->
+          <div class="discipline-card" style="border:1px solid #222; padding:40px; background:#111; transition: border-color 0.3s ease, transform 0.3s ease;">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px;">
               <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="4" y="4" width="44" height="44" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
@@ -126,75 +271,115 @@
             </div>
             <h3 style="font-weight:600; text-transform:uppercase; font-size:18px; margin:0 0 8px 0;">Blackout</h3>
             <p style="color:#C9A84C; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; margin:0 0 16px 0;">Bold. Enduring. Definitive.</p>
-            <p style="color:#666; font-size:14px; line-height:1.8;">Solid black geometric patterns with high visual impact. Blackout tattoos age beautifully and make a statement that will last a lifetime.</p>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:32px;">Solid black geometric patterns with high visual impact. Blackout tattoos age beautifully and make a statement that will last a lifetime.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Solid Black</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">High Contrast</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Bold Coverage</span>
+              <span style="border:1px solid #2a2a2a; color:#444; font-size:10px; padding:5px 10px; letter-spacing:0.1em; text-transform:uppercase;">Timeless</span>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
+
+    <style>
+      .discipline-card:hover {
+        border-color: #C9A84C !important;
+        transform: translateY(-4px);
+      }
+    </style>
+
     <!-- PORTFOLIO -->
-    <section id="work" style="padding:120px 40px;">
-      <div style="max-width:1400px; margin:0 auto;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px;">
+    <section id="work" class="portfolio-section" style="scroll-margin-top:20px; padding:120px 40px;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <div class="portfolio-header" style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px;">
           <h2 style="font-weight:600; text-transform:uppercase; line-height:0.9; font-size:clamp(3rem, 7vw, 7rem); margin:0;">
             <span style="color:#fff;">THE </span>
             <span style="color:#C9A84C;">PORTFOLIO</span>
           </h2>
-          <p style="color:#555; font-size:14px; text-align:right;">Every piece designed from scratch.<br/>No flash, no repeats.</p>
+          <p style="color:#555; font-size:14px; text-align:right; max-width:200px;">Every piece designed from scratch. No flash, no repeats.</p>
         </div>
         <div style="display:flex; gap:8px; margin-bottom:40px; flex-wrap:wrap;">
-          <button onclick="filterImages('all')" id="btn-all" style="background:#C9A84C; color:#000; border:1px solid #C9A84C; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">All</button>
-          <button onclick="filterImages('geometric')" id="btn-geometric" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Geometric</button>
-          <button onclick="filterImages('mandala')" id="btn-mandala" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Mandala</button>
-          <button onclick="filterImages('blackout')" id="btn-blackout" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Blackout</button>
-          <button onclick="filterImages('ornamental')" id="btn-ornamental" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Ornamental</button>
+          <button id="btn-all" style="background:#C9A84C; color:#000; border:1px solid #C9A84C; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">All</button>
+          <button id="btn-geometric" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Geometric</button>
+          <button id="btn-mandala" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Mandala</button>
+          <button id="btn-ornamental" style="background:transparent; color:#fff; border:1px solid #333; padding:8px 20px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; cursor:pointer;">Ornamental</button>
         </div>
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); grid-template-rows:auto; gap:4px;">
-          <img data-category="geometric" src="/images/geometric-tattoo-1.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; grid-column:span 1; grid-row:span 2;" />
-          <img data-category="geometric" src="/images/geometric-tattoo-2.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
-          <img data-category="mandala" src="/images/mandala-tattoo-1.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
-          <img data-category="geometric" src="/images/geometric-tattoo-3.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
-          <img data-category="mandala" src="/images/mandala-tattoo-2.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
-          <img data-category="mandala" src="/images/mandala-tattoo-3.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block; grid-column:span 1; grid-row:span 2;" />
-          <img data-category="mandala" src="/images/mandala-tattoo-4.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
-          <img data-category="mandala" src="/images/mandala-tattoo-5.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
-          <img data-category="ornamental" src="/images/ornamental-tattoo-1.jpg" alt="Ornamental tattoo Amsterdam" style="width:100%; aspect-ratio:1; object-fit:cover; display:block;" />
+
+        <div id="masonry-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
+          <div data-category="geometric">
+            <img src="/images/geometric-tattoo-1.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
+          <div data-category="geometric">
+            <img src="/images/geometric-tattoo-2.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
+          <div data-category="mandala">
+            <img src="/images/mandala-tattoo-1.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
+          <div data-category="geometric">
+            <img src="/images/geometric-tattoo-3.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
+          <div data-category="mandala">
+            <img src="/images/mandala-tattoo-2.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
+          <div data-category="mandala">
+            <img src="/images/mandala-tattoo-3.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
+          <div data-category="mandala">
+            <img src="/images/mandala-tattoo-4.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
+          <div data-category="mandala">
+            <img src="/images/mandala-tattoo-5.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
+          <div data-category="ornamental">
+            <img src="/images/ornamental-tattoo-1.jpg" alt="Ornamental tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+          </div>
         </div>
       </div>
     </section>
 
     <script>
-    function filterImages(category) {
-      const images = document.querySelectorAll('[data-category]');
+    document.addEventListener('DOMContentLoaded', () => {
       const buttons = document.querySelectorAll('[id^="btn-"]');
+      const items = document.querySelectorAll('#masonry-grid [data-category]');
+
       buttons.forEach(btn => {
-        btn.style.background = 'transparent';
-        btn.style.color = '#fff';
-        btn.style.borderColor = '#333';
+        btn.addEventListener('click', () => {
+          const category = btn.id.replace('btn-', '');
+
+          buttons.forEach(b => {
+            b.style.background = 'transparent';
+            b.style.color = '#fff';
+            b.style.borderColor = '#333';
+          });
+
+          btn.style.background = '#C9A84C';
+          btn.style.color = '#000';
+          btn.style.borderColor = '#C9A84C';
+
+          items.forEach(item => {
+            if (category === 'all' || item.dataset.category === category) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
       });
-      const activeBtn = document.getElementById('btn-' + category);
-      if (activeBtn) {
-        activeBtn.style.background = '#C9A84C';
-        activeBtn.style.color = '#000';
-        activeBtn.style.borderColor = '#C9A84C';
-      }
-      images.forEach(img => {
-        if (category === 'all' || img.dataset.category === category) {
-          img.style.display = 'block';
-        } else {
-          img.style.display = 'none';
-        }
-      });
-    }
+    });
     </script>
+
     <!-- PROCESS -->
-    <section id="process" style="padding:120px 40px; background:#0a0a0a;">
+    <section id="process" class="process-section" style="scroll-margin-top:10px; padding:120px 40px; background:#0a0a0a;">
       <div style="max-width:1100px; margin:0 auto;">
         <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; margin-bottom:16px;">How It Works</p>
         <h2 style="font-weight:600; text-transform:uppercase; line-height:0.9; text-align:center; font-size:clamp(3rem, 7vw, 7rem); margin:0 0 80px 0;">
           <span style="color:#fff;">THE </span>
           <span style="color:#C9A84C;">PROCESS</span>
         </h2>
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px;">
+        <div class="process-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:40px;">
           <div>
             <div style="border:1px solid #C9A84C; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:18px; color:#C9A84C; margin-bottom:24px;">01</div>
             <h3 style="font-weight:600; text-transform:uppercase; margin:0 0 12px 0;">Consultation</h3>
@@ -204,13 +389,13 @@
           <div>
             <div style="border:1px solid #C9A84C; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:18px; color:#C9A84C; margin-bottom:24px;">02</div>
             <h3 style="font-weight:600; text-transform:uppercase; margin:0 0 12px 0;">Custom Design</h3>
-            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:16px;">James draws your piece from scratch, mathematically precise, digitally drafted in Illustrator.</p>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:16px;">I draw your piece from scratch, mathematically precise, digitally drafted in Illustrator.</p>
             <span style="border:1px solid #333; color:#555; font-size:11px; padding:6px 12px; letter-spacing:0.1em; text-transform:uppercase;">1–2 Weeks</span>
           </div>
           <div>
             <div style="border:1px solid #C9A84C; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:18px; color:#C9A84C; margin-bottom:24px;">03</div>
             <h3 style="font-weight:600; text-transform:uppercase; margin:0 0 12px 0;">The Session</h3>
-            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:16px;">At Ink District Amsterdam, James executes the design with precision.</p>
+            <p style="color:#666; font-size:14px; line-height:1.8; margin-bottom:16px;">At Ink District Amsterdam, I execute the design with precision.</p>
             <span style="border:1px solid #333; color:#555; font-size:11px; padding:6px 12px; letter-spacing:0.1em; text-transform:uppercase;">2–8 Hours</span>
           </div>
           <div>
@@ -223,28 +408,268 @@
       </div>
     </section>
 
+    <!-- FOLLOW THE JOURNEY -->
+    <section class="instagram-section" style="scroll-margin-top:10px; padding:120px 40px; background:#000;">
+      <div style="max-width:1400px; margin:0 auto;">
+        <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; margin-bottom:16px;">Instagram</p>
+        <h2 style="font-weight:600; text-transform:uppercase; line-height:0.9; text-align:center; font-size:clamp(3rem, 7vw, 7rem); margin:0 0 16px 0;">
+          <span style="color:#fff; display:block;">FOLLOW THE</span>
+          <span style="color:#C9A84C; display:block;">JOURNEY</span>
+        </h2>
+        <p style="color:#555; text-align:center; font-size:13px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:60px;">@jamesnidecker</p>
+
+        <div id="instagram-grid" style="max-width:1100px; margin:0 auto;"></div>
+
+        <div style="text-align:center; margin-top:48px;">
+          <a href="https://instagram.com/jamesnidecker" target="_blank" style="border:1px solid #C9A84C; color:#C9A84C; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">View on Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      #instagram-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      #instagram-grid a {
+        display: block;
+        overflow: hidden;
+      }
+      #instagram-grid img {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      #instagram-grid a:hover img {
+        transform: scale(1.03);
+      }
+      @media (max-width: 768px) {
+        #instagram-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      }
+      @media (max-width: 480px) {
+        #instagram-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      }
+    </style>
+
+    <script>
+    async function loadInstagram() {
+      try {
+        const res = await fetch('https://feeds.behold.so/R4JBXf79SzJDMUtTid7A');
+        const data = await res.json();
+        const posts = data.posts.slice(0, 6);
+        const grid = document.getElementById('instagram-grid');
+        posts.forEach(post => {
+          const img = post.sizes?.medium?.mediaUrl || post.thumbnailUrl || post.mediaUrl;
+          if (!img) return;
+          const a = document.createElement('a');
+          a.href = post.permalink;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.style.display = 'block';
+          a.style.overflow = 'hidden';
+          const i = document.createElement('img');
+          i.src = img;
+          i.alt = 'James Nidecker tattoo Amsterdam';
+          i.loading = 'lazy';
+          i.style.width = '100%';
+          i.style.aspectRatio = '4/5';
+          i.style.objectFit = 'cover';
+          i.style.display = 'block';
+          i.style.transition = 'transform 0.3s ease';
+          a.appendChild(i);
+          grid.appendChild(a);
+        });
+      } catch(e) {
+        console.error('Instagram feed error:', e);
+      }
+    }
+    loadInstagram();
+    </script>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section" style="scroll-margin-top:20px; padding:80px 40px; background:#0a0a0a;">
+      <div style="max-width:800px; margin:0 auto;">
+        <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; margin-bottom:16px;">FAQ</p>
+        <h2 style="font-weight:600; text-transform:uppercase; line-height:0.9; text-align:center; font-size:clamp(2.5rem, 5vw, 4.5rem); margin:0 0 48px 0;">
+          <span style="color:#fff; display:block;">COMMON</span>
+          <span style="color:#C9A84C; display:block;">QUESTIONS</span>
+        </h2>
+
+        <div id="faq-list">
+
+          <div class="faq-item" style="border-top:1px solid #1a1a1a;">
+            <button class="faq-question" style="width:100%; text-align:left; background:none; border:none; padding:24px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:500;">
+              How much does a geometric or mandala tattoo cost?
+              <span class="faq-icon" style="color:#C9A84C; font-size:20px; font-weight:300; flex-shrink:0; margin-left:16px;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none; padding-bottom:24px;">
+              <p style="color:#666; font-size:14px; line-height:1.8; margin:0;">Pricing depends on size, complexity, and session time. I charge a day rate for large pieces and an hourly rate for smaller work. Free consultations are offered to give you an accurate estimate before committing.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-top:1px solid #1a1a1a;">
+            <button class="faq-question" style="width:100%; text-align:left; background:none; border:none; padding:24px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:500;">
+              How far in advance do I need to book?
+              <span class="faq-icon" style="color:#C9A84C; font-size:20px; font-weight:300; flex-shrink:0; margin-left:16px;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none; padding-bottom:24px;">
+              <p style="color:#666; font-size:14px; line-height:1.8; margin:0;">Typically 3–4 weeks for custom pieces. Large sleeve or back projects may require booking further in advance. I limit client intake to ensure every piece receives the design time it deserves.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-top:1px solid #1a1a1a;">
+            <button class="faq-question" style="width:100%; text-align:left; background:none; border:none; padding:24px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:500;">
+              Do geometric tattoos hurt more than regular tattoos?
+              <span class="faq-icon" style="color:#C9A84C; font-size:20px; font-weight:300; flex-shrink:0; margin-left:16px;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none; padding-bottom:24px;">
+              <p style="color:#666; font-size:14px; line-height:1.8; margin:0;">Pain level depends on placement, not style. Geometric tattoos often require steady, consistent linework which means fewer passes over the same area, and many clients report they are more comfortable than shaded work.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-top:1px solid #1a1a1a;">
+            <button class="faq-question" style="width:100%; text-align:left; background:none; border:none; padding:24px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:500;">
+              How long does a mandala tattoo session take?
+              <span class="faq-icon" style="color:#C9A84C; font-size:20px; font-weight:300; flex-shrink:0; margin-left:16px;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none; padding-bottom:24px;">
+              <p style="color:#666; font-size:14px; line-height:1.8; margin:0;">Small mandala pieces (wrist, ankle) take anywhere from 2–4 hours. Shoulder mandalas typically take 4–6 hours. Full sleeve or back mandalas are always multi-session projects, ranging from 15–30+ hours total.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-top:1px solid #1a1a1a;">
+            <button class="faq-question" style="width:100%; text-align:left; background:none; border:none; padding:24px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:500;">
+              Can I bring my own mandala design?
+              <span class="faq-icon" style="color:#C9A84C; font-size:20px; font-weight:300; flex-shrink:0; margin-left:16px;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none; padding-bottom:24px;">
+              <p style="color:#666; font-size:14px; line-height:1.8; margin:0;">You're welcome to bring references for inspiration, but I design every piece from scratch. This ensures the geometry is perfect for your specific body placement and that you receive a truly unique tattoo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-top:1px solid #1a1a1a;">
+            <button class="faq-question" style="width:100%; text-align:left; background:none; border:none; padding:24px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:500;">
+              Will my geometric tattoo age well?
+              <span class="faq-icon" style="color:#C9A84C; font-size:20px; font-weight:300; flex-shrink:0; margin-left:16px;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none; padding-bottom:24px;">
+              <p style="color:#666; font-size:14px; line-height:1.8; margin:0;">Blackwork geometric tattoos age exceptionally well. Bold linework holds up better than shading over time. With proper sun protection and skin care, your geometric tattoo will look sharp for decades. Note that blackout tattoos always look their darkest right after the session and will heal slightly lighter.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-top:1px solid #1a1a1a;">
+            <button class="faq-question" style="width:100%; text-align:left; background:none; border:none; padding:24px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:500;">
+              Do you do white ink or coloured geometric work?
+              <span class="faq-icon" style="color:#C9A84C; font-size:20px; font-weight:300; flex-shrink:0; margin-left:16px;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none; padding-bottom:24px;">
+              <p style="color:#666; font-size:14px; line-height:1.8; margin:0;">I specialise exclusively in black ink geometric, mandala, and blackwork tattoos. This focus allows me to achieve the highest possible quality in this style.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" style="border-top:1px solid #1a1a1a; border-bottom:1px solid #1a1a1a;">
+            <button class="faq-question" style="width:100%; text-align:left; background:none; border:none; padding:24px 0; display:flex; justify-content:space-between; align-items:center; cursor:pointer; color:#fff; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:500;">
+              What should I do to prepare for my tattoo session?
+              <span class="faq-icon" style="color:#C9A84C; font-size:20px; font-weight:300; flex-shrink:0; margin-left:16px;">+</span>
+            </button>
+            <div class="faq-answer" style="display:none; padding-bottom:24px;">
+              <p style="color:#666; font-size:14px; line-height:1.8; margin:0;">Sleep well the night before, eat a full meal 2 hours before your appointment, stay hydrated, wear comfortable clothing that provides easy access to the tattoo area, and avoid alcohol for 24 hours prior.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const questions = document.querySelectorAll('.faq-question');
+      questions.forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          const icon = question.querySelector('.faq-icon');
+          const isOpen = answer.style.display === 'block';
+          document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+          document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+          if (!isOpen) {
+            answer.style.display = 'block';
+            icon.textContent = '×';
+          }
+        });
+      });
+    });
+    </script>
+
     <!-- BOOKING CTA -->
-    <section id="contact" style="padding:120px 40px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+    <section id="contact" class="contact-section" style="scroll-margin-top:10px; padding:120px 40px; display:flex; flex-direction:column; align-items:center; text-align:center;">
       <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:24px;">Get Tattooed</p>
       <h2 style="font-weight:600; text-transform:uppercase; line-height:0.9; font-size:clamp(3rem, 10vw, 9rem); margin:0 0 40px 0;">
         <span style="color:#fff; display:block;">READY TO</span>
         <span style="color:#C9A84C; display:block;">BEGIN?</span>
       </h2>
       <p style="color:#888; max-width:500px; line-height:1.8; margin-bottom:48px;">Booking slots are limited. James takes on a select number of custom pieces each month to ensure every client receives his full attention.</p>
-      <div style="display:flex; gap:16px; margin-bottom:32px;">
-        <a href="mailto:james@jamesnidecker.com" style="background:#C9A84C; color:#000; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Book An Appointment</a>
-        <a href="https://instagram.com/jamesnidecker" style="border:1px solid #C9A84C; color:#C9A84C; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Message On Instagram</a>
+      <div class="contact-buttons" style="display:flex; gap:16px; margin-bottom:32px; flex-wrap:wrap; justify-content:center;">
+        <a href="http://book.useblink.app/ink-district/james-nidecker?theme=light" target="_blank" style="background:#C9A84C; color:#000; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Book Online</a>
+        <a href="mailto:info@jamesnidecker.com" style="border:1px solid #C9A84C; color:#C9A84C; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Email Me</a>
+        <a href="https://instagram.com/jamesnidecker" target="_blank" style="border:1px solid #333; color:#666; padding:16px 40px; font-weight:700; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Message On Instagram</a>
       </div>
       <p style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">Free consultation · 100% custom design · Amsterdam-based</p>
     </section>
 
     <!-- FOOTER -->
-    <footer style="border-top:1px solid #111; padding:32px 40px; display:flex; justify-content:space-between; align-items:center;">
-      <span style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">© 2026 James Nidecker</span>
-      <span style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">Ink District Amsterdam</span>
-      <a href="https://instagram.com/jamesnidecker" style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">@jamesnidecker</a>
+    <footer style="background:#0a0a0a; border-top:1px solid #111; padding:80px 40px 40px 40px;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:60px; margin-bottom:60px;">
+          
+          <!-- Column 1 — Brand -->
+          <div>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:900; text-transform:uppercase; font-size:2rem; line-height:0.9; margin:0 0 24px 0;">
+              <span style="color:#fff; display:block;">JAMES</span>
+              <span style="color:#C9A84C; display:block;">NIDECKER</span>
+            </h3>
+            <p style="color:#555; font-size:13px; line-height:1.8; margin-bottom:24px;">Geometric tattoo artist specialising in mandala, sacred geometry and blackout. Based in Amsterdam.</p>
+            <a href="https://instagram.com/jamesnidecker" target="_blank" style="color:#C9A84C; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">⊙ @jamesnidecker</a>
+          </div>
+
+          <!-- Column 2 — Navigation -->
+          <div>
+            <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:24px;">Navigation</p>
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <a href="#work" style="color:#555; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Work</a>
+              <a href="#about" style="color:#555; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">About</a>
+              <a href="#services" style="color:#555; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Services</a>
+              <a href="#process" style="color:#555; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Process</a>
+              <a href="#faq" style="color:#555; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">FAQ</a>
+              <a href="#contact" style="color:#555; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Book</a>
+            </div>
+          </div>
+
+          <!-- Column 3 — Contact -->
+          <div>
+            <p style="color:#C9A84C; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:24px;">Get In Touch</p>
+            <p style="color:#333; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px;">Location</p>
+            <p style="color:#555; font-size:13px; margin-bottom:24px;">Amsterdam, Netherlands</p>
+            <p style="color:#333; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px;">Bookings</p>
+            <a href="http://book.useblink.app/ink-district/james-nidecker?theme=light" target="_blank" style="color:#C9A84C; font-size:13px; text-decoration:none; display:block; margin-bottom:24px;">Via booking form</a>
+            <p style="color:#333; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px;">Instagram</p>
+            <a href="https://instagram.com/jamesnidecker" target="_blank" style="color:#C9A84C; font-size:13px; text-decoration:none; display:block; margin-bottom:24px;">@jamesnidecker</a>
+            <a href="http://book.useblink.app/ink-district/james-nidecker?theme=light" target="_blank" style="border:1px solid #C9A84C; color:#C9A84C; padding:12px 24px; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; display:inline-block;">Book Now</a>
+          </div>
+
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom" style="border-top:1px solid #111; padding-top:32px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">© 2026 James Nidecker. All rights reserved.</span>
+          <span style="color:#333; font-size:11px; letter-spacing:0.15em; text-transform:uppercase;">Geometric Tattoo · Mandala Tattoo · Blackout · Amsterdam</span>
+        </div>
+      </div>
     </footer>
 
   </body>
 </html>
-

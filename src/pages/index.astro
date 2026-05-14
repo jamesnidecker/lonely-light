@@ -378,35 +378,35 @@
     </section>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('[id^="btn-"]');
-      const items = document.querySelectorAll('#masonry-grid [data-category]');
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('[id^="btn-"]');
+  const items = document.querySelectorAll('#masonry-grid [data-category]');
 
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const category = btn.id.replace('btn-', '');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.id.replace('btn-', '');
 
-          buttons.forEach(b => {
-            b.style.background = 'transparent';
-            b.style.color = '#fff';
-            b.style.borderColor = '#333';
-          });
+      buttons.forEach(b => {
+        (b as HTMLElement).style.background = 'transparent';
+        (b as HTMLElement).style.color = '#fff';
+        (b as HTMLElement).style.borderColor = '#333';
+      });
 
-          btn.style.background = '#C9A84C';
-          btn.style.color = '#000';
-          btn.style.borderColor = '#C9A84C';
+      (btn as HTMLElement).style.background = '#C9A84C';
+      (btn as HTMLElement).style.color = '#000';
+      (btn as HTMLElement).style.borderColor = '#C9A84C';
 
-          items.forEach(item => {
-            if (category === 'all' || item.dataset.category === category) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
+      items.forEach(item => {
+        if (category === 'all' || (item as HTMLElement).dataset.category === category) {
+          (item as HTMLElement).style.display = 'block';
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
       });
     });
-    </script>
+  });
+});
+</script>
 
     <!-- PROCESS -->
     <section id="process" class="process-section" style="scroll-margin-top:10px; padding:120px 40px; background:#0a0a0a;">
@@ -494,39 +494,40 @@
     </style>
 
     <script>
-    async function loadInstagram() {
-      try {
-        const res = await fetch('https://feeds.behold.so/R4JBXf79SzJDMUtTid7A');
-        const data = await res.json();
-        const posts = data.posts.slice(0, 6);
-        const grid = document.getElementById('instagram-grid');
-        posts.forEach(post => {
-          const img = post.sizes?.medium?.mediaUrl || post.thumbnailUrl || post.mediaUrl;
-          if (!img) return;
-          const a = document.createElement('a');
-          a.href = post.permalink;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-          a.style.display = 'block';
-          a.style.overflow = 'hidden';
-          const i = document.createElement('img');
-          i.src = img;
-          i.alt = 'James Nidecker tattoo Amsterdam';
-          i.loading = 'lazy';
-          i.style.width = '100%';
-          i.style.aspectRatio = '4/5';
-          i.style.objectFit = 'cover';
-          i.style.display = 'block';
-          i.style.transition = 'transform 0.3s ease';
-          a.appendChild(i);
-          grid.appendChild(a);
-        });
-      } catch(e) {
-        console.error('Instagram feed error:', e);
-      }
-    }
-    loadInstagram();
-    </script>
+async function loadInstagram() {
+  try {
+    const res = await fetch('https://feeds.behold.so/R4JBXf79SzJDMUtTid7A');
+    const data = await res.json();
+    const posts = data.posts.slice(0, 6);
+    const grid = document.getElementById('instagram-grid');
+    if (!grid) return;
+    posts.forEach((post: any) => {
+      const img = post.sizes?.medium?.mediaUrl || post.thumbnailUrl || post.mediaUrl;
+      if (!img) return;
+      const a = document.createElement('a');
+      a.href = post.permalink;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.style.display = 'block';
+      a.style.overflow = 'hidden';
+      const i = document.createElement('img');
+      i.src = img;
+      i.alt = 'James Nidecker tattoo Amsterdam';
+      i.loading = 'lazy';
+      i.style.width = '100%';
+      i.style.aspectRatio = '4/5';
+      i.style.objectFit = 'cover';
+      i.style.display = 'block';
+      i.style.transition = 'transform 0.3s ease';
+      a.appendChild(i);
+      grid.appendChild(a);
+    });
+  } catch(e) {
+    console.error('Instagram feed error:', e);
+  }
+}
+loadInstagram();
+</script>
 
     <!-- FAQ -->
     <section id="faq" class="faq-section" style="scroll-margin-top:20px; padding:80px 40px; background:#0a0a0a;">
@@ -623,24 +624,24 @@
       </div>
     </section>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const questions = document.querySelectorAll('.faq-question');
-      questions.forEach(question => {
-        question.addEventListener('click', () => {
-          const answer = question.nextElementSibling;
-          const icon = question.querySelector('.faq-icon');
-          const isOpen = answer.style.display === 'block';
-          document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-          document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
-          if (!isOpen) {
-            answer.style.display = 'block';
-            icon.textContent = '×';
-          }
-        });
-      });
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const questions = document.querySelectorAll('.faq-question');
+  questions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling as HTMLElement | null;
+      const icon = question.querySelector('.faq-icon') as HTMLElement | null;
+      const isOpen = answer?.style.display === 'block';
+      document.querySelectorAll('.faq-answer').forEach(a => (a as HTMLElement).style.display = 'none');
+      document.querySelectorAll('.faq-icon').forEach(i => (i as HTMLElement).textContent = '+');
+      if (!isOpen && answer && icon) {
+        answer.style.display = 'block';
+        icon.textContent = '×';
+      }
     });
-    </script>
+  });
+});
+</script>
 
     <!-- BOOKING CTA -->
     <section id="contact" class="contact-section" style="scroll-margin-top:10px; padding:120px 40px; display:flex; flex-direction:column; align-items:center; text-align:center;">

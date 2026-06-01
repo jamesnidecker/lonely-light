@@ -40,3 +40,11 @@ html body h6 {
   font-family: 'Archivo', sans-serif !important;
   font-weight: 900 !important;
 }
+.nav-blog-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .nav-blog-mobile {
+    display: inline !important;
+  }
+}

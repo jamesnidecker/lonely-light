@@ -74,10 +74,21 @@
           padding: 10px 16px !important;
           font-size: 11px !important;
         }
+        .nav-hamburger {
+          display: block !important;
+        }
       }
 
-      /* HERO */
+     /* HERO */
       @media (max-width: 768px) {
+        .hero-section {
+          padding-top: 120px !important;
+        }
+        .hero-tagline {
+          letter-spacing: 0.08em !important;
+          font-size: 10px !important;
+          padding: 0 12px;
+        }
         .hero-buttons {
           flex-direction: column !important;
           width: 100%;
@@ -206,14 +217,76 @@
         <a href="/blog" style="color:#666; text-decoration:none;">Blog</a>
         <a href="https://instagram.com/jamesnidecker" target="_blank" style="color:#666; text-decoration:none;">Instagram</a>
       </div>
-<a href="/blog" class="nav-blog-mobile" style="display:none; color:#C9A84C; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; margin-right:16px;">Blog</a>
+
+      <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" class="nav-hamburger" style="display:none; background:none; border:none; padding:8px; margin-right:12px; cursor:pointer; flex-shrink:0;">
+        <svg id="hamburger-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg id="hamburger-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" style="display:none;">
+          <line x1="5" y1="5" x2="19" y2="19"></line>
+          <line x1="19" y1="5" x2="5" y2="19"></line>
+        </svg>
+      </button>
 
       <a class="nav-book" href="/book" style="border:1px solid #C9A84C; color:#C9A84C; font-size:12px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:12px 24px; text-decoration:none; flex-shrink:0;">Book Now</a>
     </nav>
 
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" style="display:none; position:fixed; inset:0; background:#000; z-index:49; padding:120px 40px 40px 40px; flex-direction:column; gap:28px; overflow-y:auto;">
+      <a href="#work" class="mobile-menu-link" style="color:#fff; text-decoration:none; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase;">Work</a>
+      <a href="#about" class="mobile-menu-link" style="color:#fff; text-decoration:none; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase;">About</a>
+      <a href="#services" class="mobile-menu-link" style="color:#fff; text-decoration:none; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase;">Services</a>
+      <a href="#process" class="mobile-menu-link" style="color:#fff; text-decoration:none; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase;">Process</a>
+      <a href="#faq" class="mobile-menu-link" style="color:#fff; text-decoration:none; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase;">FAQ</a>
+      <a href="#contact" class="mobile-menu-link" style="color:#fff; text-decoration:none; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase;">Contact</a>
+      <a href="/blog" style="color:#fff; text-decoration:none; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase;">Blog</a>
+      <a href="https://instagram.com/jamesnidecker" target="_blank" style="color:#C9A84C; text-decoration:none; font-family:'Archivo',sans-serif; font-weight:900; font-size:1.8rem; text-transform:uppercase;">Instagram</a>
+    </div>
+
+    <script>
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('hamburger-icon-open');
+      const iconClose = document.getElementById('hamburger-icon-close');
+      const mobileLinks = document.querySelectorAll('#mobile-menu a');
+
+      function closeMobileMenu() {
+        if (mobileMenu) mobileMenu.style.display = 'none';
+        if (iconOpen) iconOpen.style.display = 'block';
+        if (iconClose) iconClose.style.display = 'none';
+        if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      function openMobileMenu() {
+        if (mobileMenu) mobileMenu.style.display = 'flex';
+        if (iconOpen) iconOpen.style.display = 'none';
+        if (iconClose) iconClose.style.display = 'block';
+        if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      hamburgerBtn?.addEventListener('click', () => {
+        const isOpen = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          closeMobileMenu();
+        });
+      });
+    </script>
+
     <!-- HERO -->
-    <section style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 20px 40px 20px;">
-      <p style="color:#C9A84C; letter-spacing:0.2em; font-size:12px; text-transform:uppercase; margin-bottom:32px;">Geometric · Mandala · Blackout</p>
+   <section class="hero-section" style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:160px 20px 40px 20px;">
+<p class="hero-tagline" style="color:#C9A84C; letter-spacing:0.2em; font-size:12px; text-transform:uppercase; margin-bottom:32px;">Geometric · Mandala · Blackout</p>
       <h1 style="font-weight:600; text-transform:uppercase; line-height:0.9; margin:0; font-size:clamp(4rem, 12vw, 11rem);">
         <span style="color:#fff; display:block;">JAMES</span>
         <span style="color:#C9A84C; display:block;">NIDECKER</span>
@@ -359,14 +432,11 @@
   <div data-category="mandala">
     <img src="/images/mandala-tattoo-1.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
-  <div data-category="geometric">
-    <img src="/images/geometric-tattoo-3.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+  <div data-category="geometric blackout">
+    <img src="/images/geometric-tattoo-3.jpg" alt="Geometric and blackout tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
   <div data-category="mandala">
     <img src="/images/mandala-tattoo-2.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
-  </div>
-  <div data-category="blackout">
-    <img src="/images/blackout-geometric-1.jpg" alt="Blackout tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
   <div data-category="mandala">
     <img src="/images/mandala-tattoo-3.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
@@ -375,7 +445,7 @@
     <img src="/images/geometric-tattoo-4.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
   <div data-category="blackout">
-    <img src="/images/blackout-geometric-2.jpg" alt="Blackout tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+    <img src="/images/blackout-process-1.jpg" alt="Blackout tattoo session Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
   <div data-category="mandala">
     <img src="/images/mandala-tattoo-4.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
@@ -384,7 +454,7 @@
     <img src="/images/ornamental-tattoo-1.jpg" alt="Ornamental tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
   <div data-category="blackout">
-    <img src="/images/blackout-geometric-3.jpg" alt="Blackout tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+    <img src="/images/blackout-process-2.jpg" alt="Blackout tattoo detail Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
   <div data-category="mandala">
     <img src="/images/mandala-tattoo-5.jpg" alt="Mandala tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
@@ -392,14 +462,19 @@
   <div data-category="geometric">
     <img src="/images/geometric-tattoo-5.jpg" alt="Geometric tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
-  <div data-category="blackout">
-    <img src="/images/blackout-geometric-4.jpg" alt="Blackout tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+  <div data-category="blackout" style="position:relative;">
+    <img src="/images/blackout-coverup-1.jpg" alt="Blackout tattoo cover-up Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; display:block;" />
   </div>
   <div data-category="ornamental">
     <img src="/images/ornamental-tattoo-2.jpg" alt="Ornamental tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
   </div>
-  <div data-category="blackout">
-    <img src="/images/blackout-peony-1.jpg" alt="Blackout peony tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+  <div data-category="blackout" style="position:relative;">
+    <img src="/images/blackout-geometric-1.jpg" alt="Blackout tattoo concept design Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+    <span style="position:absolute; bottom:10px; left:10px; background:rgba(0,0,0,0.75); color:#C9A84C; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; padding:4px 10px; border:1px solid #C9A84C;">Concept Design</span>
+  </div>
+  <div data-category="blackout" style="position:relative;">
+    <img src="/images/blackout-peony-1.jpg" alt="Blackout peony tattoo concept design Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
+    <span style="position:absolute; bottom:10px; left:10px; background:rgba(0,0,0,0.75); color:#C9A84C; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; padding:4px 10px; border:1px solid #C9A84C;">Concept Design</span>
   </div>
   <div data-category="mandala">
     <img src="/images/mandala-tattoo-6.jpg" alt="Mandala sleeve tattoo Amsterdam" style="width:100%; aspect-ratio:4/5; object-fit:cover; display:block;" />
@@ -428,7 +503,8 @@ document.addEventListener('DOMContentLoaded', () => {
       (btn as HTMLElement).style.borderColor = '#C9A84C';
 
       items.forEach(item => {
-        if (category === 'all' || (item as HTMLElement).dataset.category === category) {
+       const itemCategories = ((item as HTMLElement).dataset.category || '').split(' ');
+if (category === 'all' || itemCategories.includes(category)) {
           (item as HTMLElement).style.display = 'block';
         } else {
           (item as HTMLElement).style.display = 'none';
